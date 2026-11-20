@@ -38,7 +38,7 @@ import { SettingsView } from './components/views/SettingsView';
 import { diffDaysFromToday, formatCurrency, getLocalized } from './utils/formatters';
 
 const ADMIN_AVATAR_SRC = '/src/assets/images/avatar_platform_admin_1795170332661.jpg';
-const BRAND_LOGO_SRC = '/assets/aistudio/IMG_8325_5ae20b19.jpeg';
+const BRAND_LOGO_SRC = `${import.meta.env.BASE_URL}assets/aistudio/IMG_8325_5ae20b19.jpeg`;
 
 const NAV_ITEMS: { key: NavSection; icon: React.ComponentType<{ className?: string }> }[] = [
   { key: 'overview', icon: LayoutDashboard },
