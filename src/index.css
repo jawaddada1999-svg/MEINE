@@ -168,89 +168,109 @@ table tbody td { font-size: 13px; }
 }
 
 
-/* Mobile-first data tables: every field is visible as a compact social-feed style record. */
+
+/* Compact, conventional tables on phones: preserve the familiar grid and show all columns. */
 @media (max-width: 767px) {
-  .ibonda-table-wrap { overflow: visible !important; }
+  .ibonda-table-wrap {
+    overflow: hidden !important;
+    border-radius: 12px !important;
+  }
   .ibonda-table-wrap > div:has(> table),
   .ibonda-table-wrap > div.overflow-x-auto {
-    overflow: visible !important;
+    overflow: hidden !important;
   }
   .ibonda-table-wrap table,
   table {
-    display: block;
+    display: table !important;
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
-    table-layout: auto;
-    border-collapse: separate;
-    border-spacing: 0;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
   }
-  table thead { display: none; }
-  table tbody { display: grid; gap: 10px; width: 100%; }
-  table tbody tr {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0 12px;
-    min-width: 0;
-    padding: 9px 11px;
-    border: 1px solid #E2E8F0;
-    border-radius: 14px;
-    background: #FFFFFF;
-    box-shadow: 0 2px 8px rgba(15,23,42,.045);
-  }
-  table tbody td {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 4px;
-    min-width: 0;
-    max-width: 100%;
-    padding: 8px 2px !important;
-    border: 0 !important;
-    border-bottom: 1px solid #F1F5F9 !important;
+  table thead { display: table-header-group !important; }
+  table tbody { display: table-row-group !important; }
+  table tr { display: table-row !important; }
+  table th, table td {
+    display: table-cell !important;
+    width: auto;
+    min-width: 0 !important;
+    max-width: none;
+    padding: 7px 5px !important;
     white-space: normal !important;
     overflow-wrap: anywhere;
     word-break: normal;
-    font-size: 12px !important;
-    line-height: 1.4;
-    text-align: start !important;
+    vertical-align: middle;
+    font-size: 10px !important;
+    line-height: 1.3 !important;
   }
-  table tbody td::before {
-    content: attr(data-label);
-    display: block;
-    color: #64748B;
-    font-size: 10px;
-    font-weight: 800;
-    line-height: 1.2;
-    letter-spacing: .01em;
+  table thead th {
+    padding: 8px 4px !important;
+    font-size: 9px !important;
+    line-height: 1.25 !important;
+    font-weight: 800 !important;
+    letter-spacing: 0 !important;
+    color: #475569;
+    background: #F1F4FA;
   }
-  table tbody td[colspan] {
-    grid-column: 1 / -1;
-    align-items: center;
-    border-bottom: 0 !important;
-    text-align: center !important;
+  table tbody td { color: #334155; }
+  table td button {
+    min-height: 29px !important;
+    min-width: 29px !important;
+    padding: 5px !important;
+    font-size: 10px !important;
   }
-  table tbody td[colspan]::before { content: none; }
-  table tbody td:last-child,
-  table tbody td:nth-last-child(2):has(button) {
-    border-bottom: 0 !important;
+  table td .flex { flex-wrap: wrap; gap: 4px !important; }
+  table td .whitespace-nowrap { white-space: normal !important; }
+  table td svg { max-width: 14px; max-height: 14px; }
+  .ibonda-table-wrap .overflow-x-auto {
+    overflow: hidden !important;
   }
-  table tbody td > * { max-width: 100%; }
-  table tbody td button { min-height: 34px; }
-  table tbody td .whitespace-nowrap { white-space: normal !important; }
-  table tbody td .flex { flex-wrap: wrap; }
-  table tbody tr:hover { background: #FFFFFF !important; }
 }
-@media (max-width: 380px) {
-  table tbody tr { gap: 0 8px; padding: 8px; }
-  table tbody td { font-size: 11px !important; padding: 7px 1px !important; }
-  table tbody td::before { font-size: 9px; }
+@media (max-width: 390px) {
+  table th, table td {
+    padding: 6px 3px !important;
+    font-size: 9px !important;
+    line-height: 1.25 !important;
+  }
+  table thead th { font-size: 8px !important; }
+  table td button { min-height: 26px !important; min-width: 26px !important; }
 }
 
-/* A coherent, restrained card system across the admin dashboard. */
-.ibonda-card {
-  background: #FFFFFF !important;
-  border: 1px solid #E5EAF2 !important;
-  box-shadow: 0 3px 12px rgba(15,23,42,.045) !important;
+/* MEINE visual language: ink navy, vivid indigo, calm teal and restrained amber. */
+:root {
+  --ibonda-primary: #172554;
+  --ibonda-primary-light: #263B78;
+  --ibonda-teal: #0F8B8D;
+  --ibonda-orange: #D69A32;
+  --ibonda-bg: #F5F7FB;
+  --ibonda-card: #FFFFFF;
+  --ibonda-text: #172033;
+  --ibonda-muted: #64748B;
+  --ibonda-border: #E5EAF2;
 }
+main { background: #F5F7FB !important; }
+.ibonda-card, .ibonda-table-wrap {
+  border-color: #E5EAF2 !important;
+  box-shadow: 0 4px 16px rgba(23,37,84,.055) !important;
+}
+.ibonda-card-header, .ibonda-table-head { background: #F4F6FB !important; }
+.ibonda-table-row { border-color: #EDF0F5 !important; }
+.ibonda-table-row:hover { background: #F5F7FF !important; }
+
+/* Normalize legacy accent colors used by older cards and controls. */
+[class*="bg-[#053332]"] { background-color: #172554 !important; }
+[class*="text-[#053332]"] { color: #172554 !important; }
+[class*="border-[#053332]"] { border-color: #CBD3E5 !important; }
+[class*="bg-[#0A4E4C]"] { background-color: #263B78 !important; }
+[class*="bg-[#DF4416]"] { background-color: #D69A32 !important; }
+[class*="text-[#DF4416]"] { color: #B7791F !important; }
+[class*="border-[#DF4416]"] { border-color: #F1D7A6 !important; }
+[class*="bg-[#15803D]"] { background-color: #0F8B8D !important; }
+[class*="text-[#15803D]"] { color: #0F766E !important; }
+[class*="border-[#15803D]"] { border-color: #B7E3DE !important; }
+[class*="bg-[#22C55E]"] { background-color: #38A69A !important; }
+[class*="bg-[#B7DEC9]"] { background-color: #DDF3EF !important; }
+[class*="bg-[#EDF7F2]"] { background-color: #F0FAF8 !important; }
+[class*="bg-[#FDBA74]"], [class*="bg-[#F97316]"], [class*="bg-[#FDE047]"] { background-color: #F8E8C9 !important; }
+[class*="text-[#000000]"] { color: #172033 !important; }
