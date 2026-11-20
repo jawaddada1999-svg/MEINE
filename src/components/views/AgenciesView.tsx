@@ -103,6 +103,8 @@ function agencyStatusSelectClass(status: AgencyStatus): string {
     case 'expired':
     case 'cancelled':
       return 'border-red-400 bg-[#FECACA] text-[#991B1B]';
+    case 'trial_rejected':
+      return 'border-amber-400 bg-amber-50 text-amber-900';
     case 'suspended':
       return 'border-[#C2D0CF] bg-[#EEF2F2] text-[#1F2937]';
   }
@@ -683,7 +685,7 @@ export function AgenciesView({ openAddOnMount, onConsumeOpenAdd }: AgenciesViewP
                             selectedAgency.status
                           )}`}
                         >
-                          {(['free_trial', 'active', 'pending_payment', 'expired', 'suspended', 'cancelled'] as AgencyStatus[]).map(
+                          {(['free_trial', 'active', 'pending_payment', 'expired', 'suspended', 'cancelled', 'trial_rejected'] as AgencyStatus[]).map(
                             (st) => (
                               <option key={st} value={st} className="bg-white text-[#000000]">
                                 {t.agencyStatus[st]}
@@ -1699,6 +1701,7 @@ export function AgenciesView({ openAddOnMount, onConsumeOpenAdd }: AgenciesViewP
                                     'expired',
                                     'suspended',
                                     'cancelled',
+                                    'trial_rejected',
                                   ] as AgencyStatus[]
                                 ).map((st) => (
                                   <option key={st} value={st} className="bg-white text-[#000000]">
@@ -1883,6 +1886,7 @@ export function AgenciesView({ openAddOnMount, onConsumeOpenAdd }: AgenciesViewP
                                   'expired',
                                   'suspended',
                                   'cancelled',
+                                  'trial_rejected',
                                 ] as AgencyStatus[]
                               ).map((st) => (
                                 <option key={st} value={st} className="bg-white text-[#000000]">
