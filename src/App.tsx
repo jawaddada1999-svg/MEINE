@@ -525,7 +525,7 @@ function DashboardShell() {
       {/* Main Content Shell */}
       <div className="flex min-w-0 flex-1 flex-col bg-white">
         {/* Top Header */}
-        <header className="sticky top-0 z-30 flex h-16 items-center justify-between gap-3 border-b border-[#BAC7C5] bg-white px-4 sm:px-6 no-print">
+        <header className="meine-topbar sticky top-0 z-30 flex h-16 items-center justify-between gap-3 border-b border-[#BAC7C5] bg-white px-4 sm:px-6 no-print">
           {/* Start: Menu Button + Breadcrumb */}
           <div className="flex items-center gap-3 min-w-0">
             <button
@@ -807,12 +807,12 @@ function DashboardShell() {
         </header>
 
         {/* Honest Demo Mode Strip */}
-        <div className="border-b border-[#BAC7C5] bg-[#F7F9F8] px-4 py-2 text-[11px] font-bold text-[#111827] sm:px-6 no-print">
+        <div className="meine-mobile-demo-strip border-b border-[#BAC7C5] bg-[#F7F9F8] px-4 py-2 text-[11px] font-bold text-[#111827] sm:px-6 no-print">
           {t.common.demoBannerText}
         </div>
 
         {/* Active View Viewport */}
-        <main className="flex-1 bg-white p-4 sm:p-6">
+        <main className="meine-main-content flex-1 bg-white p-4 sm:p-6">
           <div key={activeNav} className="mx-auto max-w-[1400px]">
             {renderView()}
           </div>
