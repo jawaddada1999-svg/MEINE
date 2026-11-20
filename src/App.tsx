@@ -122,9 +122,30 @@ function DashboardShell() {
     };
     document.addEventListener('mousedown', handleOutside);
     window.addEventListener('keydown', handleKey);
+
+    // Add the translated column heading to each cell so mobile cards remain self-explanatory.
+    const labelTableCells = () => {
+      document.querySelectorAll('table').forEach((table) => {
+        const headings = Array.from(table.querySelectorAll('thead th')).map((th) => th.textContent?.trim() || '');
+        table.querySelectorAll('tbody tr').forEach((row) => {
+          Array.from(row.querySelectorAll(':scope > td')).forEach((cell, index) => {
+            if (cell.hasAttribute('colspan')) return;
+            const label = headings[index] || '';
+            if (label && cell.getAttribute('data-label') !== label) {
+              cell.setAttribute('data-label', label);
+            }
+          });
+        });
+      });
+    };
+    labelTableCells();
+    const tableObserver = new MutationObserver(labelTableCells);
+    tableObserver.observe(document.body, { childList: true, subtree: true, characterData: true });
+
     return () => {
       document.removeEventListener('mousedown', handleOutside);
       window.removeEventListener('keydown', handleKey);
+      tableObserver.disconnect();
     };
   }, []);
 
