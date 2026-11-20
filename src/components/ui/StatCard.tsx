@@ -29,14 +29,70 @@ const TONE_MAP: Record<
     accent: string;
   }
 > = {
-  navy: { cardStyle: 'border-[#E1E9E7] bg-white', iconWrap: 'bg-[#EAF0EF] text-[#174B49]', labelColor: 'text-[#334A48]', valueColor: 'text-[#102F2E]', helperBadge: 'bg-[#EAF0EF] text-[#174B49]', accent: 'bg-[#174B49]' },
-  blue: { cardStyle: 'border-[#E1E9E7] bg-white', iconWrap: 'bg-[#EAF0F6] text-[#315B78]', labelColor: 'text-[#334A48]', valueColor: 'text-[#102F2E]', helperBadge: 'bg-[#EAF0F6] text-[#315B78]', accent: 'bg-[#315B78]' },
-  teal: { cardStyle: 'border-[#E1E9E7] bg-white', iconWrap: 'bg-[#E8F3F0] text-[#176B60]', labelColor: 'text-[#334A48]', valueColor: 'text-[#102F2E]', helperBadge: 'bg-[#E8F3F0] text-[#176B60]', accent: 'bg-[#176B60]' },
-  orange: { cardStyle: 'border-[#E1E9E7] bg-white', iconWrap: 'bg-[#F6F0E8] text-[#8B6232]', labelColor: 'text-[#334A48]', valueColor: 'text-[#102F2E]', helperBadge: 'bg-[#F6F0E8] text-[#8B6232]', accent: 'bg-[#A47A45]' },
-  success: { cardStyle: 'border-[#E1E9E7] bg-white', iconWrap: 'bg-[#E8F3EE] text-[#24734F]', labelColor: 'text-[#334A48]', valueColor: 'text-[#102F2E]', helperBadge: 'bg-[#E8F3EE] text-[#24734F]', accent: 'bg-[#24734F]' },
-  warning: { cardStyle: 'border-[#E1E9E7] bg-white', iconWrap: 'bg-[#F7F1E5] text-[#8A672A]', labelColor: 'text-[#334A48]', valueColor: 'text-[#102F2E]', helperBadge: 'bg-[#F7F1E5] text-[#8A672A]', accent: 'bg-[#A47A45]' },
-  danger: { cardStyle: 'border-[#E1E9E7] bg-white', iconWrap: 'bg-[#F6ECEA] text-[#9A5148]', labelColor: 'text-[#334A48]', valueColor: 'text-[#102F2E]', helperBadge: 'bg-[#F6ECEA] text-[#9A5148]', accent: 'bg-[#A65B51]' },
-  info: { cardStyle: 'border-[#E1E9E7] bg-white', iconWrap: 'bg-[#EAF0F6] text-[#315B78]', labelColor: 'text-[#334A48]', valueColor: 'text-[#102F2E]', helperBadge: 'bg-[#EAF0F6] text-[#315B78]', accent: 'bg-[#315B78]' },
+  navy: {
+    cardStyle: 'border-[#BFCDE8] bg-[#E0E8F8]',
+    iconWrap: 'bg-[#C8D6F0] text-[#294A83]',
+    labelColor: 'text-[#29436F]',
+    valueColor: 'text-[#172F58]',
+    helperBadge: 'bg-[#C8D6F0] text-[#294A83]',
+    accent: 'bg-[#4569A8]',
+  },
+  blue: {
+    cardStyle: 'border-[#B9D5EE] bg-[#DDECFB]',
+    iconWrap: 'bg-[#C4DDF5] text-[#245B8C]',
+    labelColor: 'text-[#24527B]',
+    valueColor: 'text-[#173E63]',
+    helperBadge: 'bg-[#C4DDF5] text-[#245B8C]',
+    accent: 'bg-[#347BB5]',
+  },
+  teal: {
+    cardStyle: 'border-[#B4DED6] bg-[#D9F1EC]',
+    iconWrap: 'bg-[#BFE5DC] text-[#17675D]',
+    labelColor: 'text-[#1B6259]',
+    valueColor: 'text-[#124A43]',
+    helperBadge: 'bg-[#BFE5DC] text-[#17675D]',
+    accent: 'bg-[#238779]',
+  },
+  orange: {
+    cardStyle: 'border-[#F0D0A9] bg-[#FBE9D5]',
+    iconWrap: 'bg-[#F5D6B2] text-[#92551F]',
+    labelColor: 'text-[#805020]',
+    valueColor: 'text-[#603B19]',
+    helperBadge: 'bg-[#F5D6B2] text-[#92551F]',
+    accent: 'bg-[#C27A35]',
+  },
+  success: {
+    cardStyle: 'border-[#B9DEC7] bg-[#DDF1E3]',
+    iconWrap: 'bg-[#C3E6CE] text-[#236A43]',
+    labelColor: 'text-[#245F3D]',
+    valueColor: 'text-[#17492D]',
+    helperBadge: 'bg-[#C3E6CE] text-[#236A43]',
+    accent: 'bg-[#328653]',
+  },
+  warning: {
+    cardStyle: 'border-[#EAD49A] bg-[#F9EDC9]',
+    iconWrap: 'bg-[#F1DFA9] text-[#80601B]',
+    labelColor: 'text-[#73551A]',
+    valueColor: 'text-[#56400F]',
+    helperBadge: 'bg-[#F1DFA9] text-[#80601B]',
+    accent: 'bg-[#B58A2E]',
+  },
+  danger: {
+    cardStyle: 'border-[#E9BFC1] bg-[#F7E0E2]',
+    iconWrap: 'bg-[#EFC8CB] text-[#963E48]',
+    labelColor: 'text-[#873B44]',
+    valueColor: 'text-[#642A33]',
+    helperBadge: 'bg-[#EFC8CB] text-[#963E48]',
+    accent: 'bg-[#B94F5A]',
+  },
+  info: {
+    cardStyle: 'border-[#C3D1F0] bg-[#E4EAF9]',
+    iconWrap: 'bg-[#CFDAF3] text-[#435D9B]',
+    labelColor: 'text-[#3D568E]',
+    valueColor: 'text-[#293F72]',
+    helperBadge: 'bg-[#CFDAF3] text-[#435D9B]',
+    accent: 'bg-[#607DBB]',
+  },
 };
 
 export function StatCard({ label, value, icon: Icon, tone = 'navy', helper }: StatCardProps) {
@@ -44,11 +100,11 @@ export function StatCard({ label, value, icon: Icon, tone = 'navy', helper }: St
 
   return (
     <div
-      className={`group relative min-h-[142px] overflow-hidden rounded-[22px] border p-4 sm:p-5 shadow-[0_5px_18px_rgba(16,47,46,0.055)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(16,47,46,0.10)] ${style.cardStyle}`}
+      className={`group relative min-h-[148px] overflow-hidden rounded-[22px] border p-4 sm:p-5 shadow-[0_6px_18px_rgba(25,45,80,0.075)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_13px_28px_rgba(25,45,80,0.13)] ${style.cardStyle}`}
     >
       <div className={`absolute inset-x-5 top-0 h-[3px] rounded-b-full opacity-80 ${style.accent}`} />
       <div className="flex items-start justify-between gap-3">
-        <p className={`text-[13px] font-semibold leading-6 ${style.labelColor}`}>{label}</p>
+        <p className={`text-[14px] font-bold leading-6 ${style.labelColor}`}>{label}</p>
         <div
           className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl ${style.iconWrap}`}
         >
@@ -57,7 +113,7 @@ export function StatCard({ label, value, icon: Icon, tone = 'navy', helper }: St
       </div>
 
       <div className="mt-5 flex items-baseline justify-between gap-2">
-        <p className={`text-[30px] font-bold tracking-[-0.04em] tabular-nums ${style.valueColor}`}>
+        <p className={`text-[32px] font-extrabold tracking-[-0.045em] tabular-nums ${style.valueColor}`}>
           {value}
         </p>
         {helper && (
