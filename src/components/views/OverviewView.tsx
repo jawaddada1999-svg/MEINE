@@ -265,23 +265,23 @@ export function OverviewView({
         <div className="overflow-hidden rounded-2xl border border-[#C7D2FE] bg-[#F8FAFF] shadow-sm">
           <div className="flex items-center justify-between border-b border-[#C7D2FE] bg-[#EEF2FF] px-5 py-3">
             <h2 className="text-sm font-bold text-[#312E81]">{t.overview.chartAgencyGrowth}</h2>
-            <span className="h-2.5 w-2.5 rounded-full bg-[#6366F1]" aria-hidden="true" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#5269D8]" aria-hidden="true" />
           </div>
           <div className="bg-white p-5">
-            <SimpleBarChart data={agencyGrowthData} primaryColor="#6366F1" />
+            <SimpleBarChart data={agencyGrowthData} primaryColor="#5269D8" />
           </div>
         </div>
 
         <div className="overflow-hidden rounded-2xl border border-[#A7F3D0] bg-[#F0FDF4] shadow-sm">
           <div className="flex items-center justify-between border-b border-[#A7F3D0] bg-[#DCFCE7] px-5 py-3">
             <h2 className="text-sm font-bold text-[#166534]">{t.overview.chartMonthlyRevenue}</h2>
-            <span className="h-2.5 w-2.5 rounded-full bg-[#16A34A]" aria-hidden="true" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#159A91]" aria-hidden="true" />
           </div>
           <div className="bg-white p-5">
             <SmoothAreaChart
               data={monthlyRevenueData}
               valueFormatter={(v) => formatCurrency(v, settings.currency, lang)}
-              primaryColor="#16A34A"
+              primaryColor="#159A91"
             />
           </div>
         </div>
@@ -289,7 +289,7 @@ export function OverviewView({
         <div className="overflow-hidden rounded-2xl border border-[#DDD6FE] bg-[#FAF5FF] shadow-sm">
           <div className="flex items-center justify-between border-b border-[#DDD6FE] bg-[#F3E8FF] px-5 py-3">
             <h2 className="text-sm font-bold text-[#6B21A8]">{t.overview.chartStatusDist}</h2>
-            <span className="h-2.5 w-2.5 rounded-full bg-[#8B5CF6]" aria-hidden="true" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#5269D8]" aria-hidden="true" />
           </div>
           <div className="bg-white p-5">
             <HorizontalDistributionList items={statusDistribution} />
@@ -299,13 +299,13 @@ export function OverviewView({
         <div className="overflow-hidden rounded-2xl border border-[#FDE68A] bg-[#FFFBEB] shadow-sm">
           <div className="flex items-center justify-between border-b border-[#FDE68A] bg-[#FEF3C7] px-5 py-3">
             <h2 className="text-sm font-bold text-[#92400E]">{t.overview.chartTrialsVsPaid}</h2>
-            <span className="h-2.5 w-2.5 rounded-full bg-[#F59E0B]" aria-hidden="true" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#D69A32]" aria-hidden="true" />
           </div>
           <div className="bg-white p-5">
             <GroupedComparisonChart
               data={trialsVsPaidData}
-              primaryColor="#F59E0B"
-              secondaryColor="#6366F1"
+              primaryColor="#D69A32"
+              secondaryColor="#5269D8"
               primaryLabel={t.overview.trialsLabel}
               secondaryLabel={t.overview.paidLabel}
             />
