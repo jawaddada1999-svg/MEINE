@@ -8,22 +8,17 @@ interface PageHeaderProps {
 
 export function PageHeader({ title, subtitle, actions }: PageHeaderProps) {
   return (
-    <div className="flex flex-col gap-4 border-b border-[#BAC7C5] pb-4 sm:flex-row sm:items-end sm:justify-between">
+    <div className="mb-6 flex flex-col gap-4 border-b border-[#E6EAF1] pb-5 sm:flex-row sm:items-center sm:justify-between">
       <div className="min-w-0">
-        <div className="flex items-center gap-2.5">
-          <span
-            className="h-7 w-1.5 rounded-full bg-[#DF4416]"
-            aria-hidden="true"
-          />
-          <h1 className="text-[24px] font-black tracking-tight text-[#000000] leading-snug">
+        <div className="flex items-center gap-3">
+          <span className="h-8 w-1 rounded-full bg-gradient-to-b from-[#3B82F6] to-[#1D4ED8]" aria-hidden="true" />
+          <h1 className="text-[25px] font-bold tracking-[-0.035em] text-[#172033] leading-tight sm:text-[28px]">
             {title}
           </h1>
         </div>
-        <p className="mt-1 text-sm font-bold text-[#111827] leading-relaxed">{subtitle}</p>
+        <p className="mt-2 ms-4 text-[13px] font-medium leading-relaxed text-[#718096]">{subtitle}</p>
       </div>
-      {actions && (
-        <div className="flex flex-wrap items-center gap-2 shrink-0">{actions}</div>
-      )}
+      {actions && <div className="flex flex-wrap items-center gap-2 shrink-0">{actions}</div>}
     </div>
   );
 }
