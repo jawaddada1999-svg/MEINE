@@ -110,3 +110,59 @@ table tbody td { font-size: 13px; }
   body { background: #ffffff !important; color: #090d0d !important; }
   .print-only-container { box-shadow: none !important; border: none !important; margin: 0 !important; padding: 0 !important; width: 100% !important; max-width: 100% !important; }
 }
+
+/* Responsive usability pass: desktop tables stay intact; phones get touch-friendly horizontal table access. */
+@media (max-width: 767px) {
+  html, body, #root { max-width: 100%; overflow-x: clip; }
+  main { min-width: 0; padding: 12px !important; }
+  main > div { min-width: 0; width: 100%; }
+  .ibonda-table-wrap {
+    overflow-x: auto !important;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: auto;
+    scrollbar-color: #94A3B8 #E2E8F0;
+  }
+  .ibonda-table-wrap > div:has(> table) {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .ibonda-table-wrap table {
+    min-width: 720px;
+    width: max-content;
+    max-width: none;
+  }
+  .ibonda-table-wrap th, .ibonda-table-wrap td {
+    white-space: nowrap;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .ibonda-filter-bar {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    padding: 12px;
+  }
+  .ibonda-filter-bar > * { min-width: 0; max-width: 100%; }
+  .ibonda-filter-bar input, .ibonda-filter-bar select { min-height: 42px; }
+  .ibonda-tabs-bar { overflow-x: auto; flex-wrap: nowrap; max-width: 100%; }
+  .ibonda-tabs-bar > * { flex: 0 0 auto; }
+  .ibonda-input, .ibonda-select { min-height: 42px; }
+  .ibonda-btn-primary, .ibonda-btn-teal, .ibonda-btn-secondary {
+    min-height: 42px;
+    justify-content: center;
+  }
+  .ibonda-card, .ibonda-table-wrap { border-radius: 14px !important; }
+  .ibonda-card-header { padding: 12px !important; }
+  table thead th { font-size: 11px; }
+  table tbody td { font-size: 12px; }
+}
+@media (max-width: 420px) {
+  main { padding: 10px !important; }
+  .ibonda-filter-bar { padding: 10px; }
+  .ibonda-btn-primary, .ibonda-btn-teal, .ibonda-btn-secondary {
+    padding-left: 11px;
+    padding-right: 11px;
+    font-size: 12px;
+  }
+}
