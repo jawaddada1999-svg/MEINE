@@ -29,68 +29,60 @@ const TONE_MAP: Record<
   }
 > = {
   navy: {
-    cardStyle:
-      'border-2 border-[#053332] bg-gradient-to-br from-[#B7DEC9] via-[#8AC9AA] to-[#5FB38C] hover:border-[#021E1D]',
-    iconWrap: 'bg-[#053332] text-[#FF6B42] ring-4 ring-white/90',
-    labelColor: 'text-[#000000]',
-    valueColor: 'text-[#000000]',
-    helperBadge: 'bg-[#053332] text-white',
-  },
-  teal: {
-    cardStyle:
-      'border-2 border-[#15803D] bg-gradient-to-br from-[#86EFAC] via-[#4ADE80] to-[#22C55E] hover:border-[#0F5132]',
-    iconWrap: 'bg-[#0F5132] text-white ring-4 ring-white/90',
-    labelColor: 'text-[#000000]',
-    valueColor: 'text-[#000000]',
-    helperBadge: 'bg-[#0F5132] text-white',
-  },
-  orange: {
-    cardStyle:
-      'border-2 border-[#B8320D] bg-gradient-to-br from-[#FDBA74] via-[#FB923C] to-[#F97316] hover:border-[#7C2D12]',
-    iconWrap: 'bg-[#9A2D0C] text-white ring-4 ring-white/90',
-    labelColor: 'text-[#000000]',
-    valueColor: 'text-[#000000]',
-    helperBadge: 'bg-[#7C2D12] text-white',
+    cardStyle: 'border border-slate-200/90 bg-gradient-to-br from-slate-50 to-white hover:border-slate-300',
+    iconWrap: 'bg-slate-100 text-slate-700',
+    labelColor: 'text-slate-600',
+    valueColor: 'text-slate-900',
+    helperBadge: 'bg-slate-100 text-slate-700',
   },
   blue: {
-    cardStyle:
-      'border-2 border-[#053332] bg-gradient-to-br from-[#B7DEC9] via-[#8AC9AA] to-[#5FB38C] hover:border-[#021E1D]',
-    iconWrap: 'bg-[#053332] text-white ring-4 ring-white/90',
-    labelColor: 'text-[#000000]',
-    valueColor: 'text-[#000000]',
-    helperBadge: 'bg-[#053332] text-white',
+    cardStyle: 'border border-blue-100 bg-gradient-to-br from-blue-50 to-white hover:border-blue-200',
+    iconWrap: 'bg-blue-100 text-blue-700',
+    labelColor: 'text-blue-800',
+    valueColor: 'text-slate-900',
+    helperBadge: 'bg-blue-100 text-blue-700',
+  },
+  teal: {
+    cardStyle: 'border border-teal-100 bg-gradient-to-br from-teal-50 to-white hover:border-teal-200',
+    iconWrap: 'bg-teal-100 text-teal-700',
+    labelColor: 'text-teal-800',
+    valueColor: 'text-slate-900',
+    helperBadge: 'bg-teal-100 text-teal-700',
+  },
+  orange: {
+    cardStyle: 'border border-orange-100 bg-gradient-to-br from-orange-50 to-white hover:border-orange-200',
+    iconWrap: 'bg-orange-100 text-orange-700',
+    labelColor: 'text-orange-800',
+    valueColor: 'text-slate-900',
+    helperBadge: 'bg-orange-100 text-orange-700',
   },
   success: {
-    cardStyle:
-      'border-2 border-[#15803D] bg-gradient-to-br from-[#86EFAC] via-[#4ADE80] to-[#22C55E] hover:border-[#0F5132]',
-    iconWrap: 'bg-[#0F5132] text-white ring-4 ring-white/90',
-    labelColor: 'text-[#000000]',
-    valueColor: 'text-[#000000]',
-    helperBadge: 'bg-[#0F5132] text-white',
+    cardStyle: 'border border-emerald-100 bg-gradient-to-br from-emerald-50 to-white hover:border-emerald-200',
+    iconWrap: 'bg-emerald-100 text-emerald-700',
+    labelColor: 'text-emerald-800',
+    valueColor: 'text-slate-900',
+    helperBadge: 'bg-emerald-100 text-emerald-700',
   },
   warning: {
-    cardStyle:
-      'border-2 border-[#B45309] bg-gradient-to-br from-[#FDE047] via-[#FBBF24] to-[#F59E0B] hover:border-[#78350F]',
-    iconWrap: 'bg-[#78350F] text-white ring-4 ring-white/90',
-    labelColor: 'text-[#000000]',
-    valueColor: 'text-[#000000]',
-    helperBadge: 'bg-[#78350F] text-white',
+    cardStyle: 'border border-amber-100 bg-gradient-to-br from-amber-50 to-white hover:border-amber-200',
+    iconWrap: 'bg-amber-100 text-amber-700',
+    labelColor: 'text-amber-800',
+    valueColor: 'text-slate-900',
+    helperBadge: 'bg-amber-100 text-amber-700',
   },
   danger: {
-    cardStyle:
-      'border-2 border-[#B91C1C] bg-gradient-to-br from-[#FDB4B4] via-[#FA8080] to-[#F05252] hover:border-[#7F1D1D]',
-    iconWrap: 'bg-[#7F1D1D] text-white ring-4 ring-white/90',
-    labelColor: 'text-[#000000]',
-    valueColor: 'text-[#000000]',
-    helperBadge: 'bg-[#7F1D1D] text-white',
+    cardStyle: 'border border-rose-100 bg-gradient-to-br from-rose-50 to-white hover:border-rose-200',
+    iconWrap: 'bg-rose-100 text-rose-700',
+    labelColor: 'text-rose-800',
+    valueColor: 'text-slate-900',
+    helperBadge: 'bg-rose-100 text-rose-700',
   },
   info: {
-    cardStyle:
-      'border-2 border-[#053332] bg-gradient-to-br from-[#B7DEC9] via-[#8AC9AA] to-[#5FB38C] hover:border-[#021E1D]',
-    iconWrap: 'bg-[#053332] text-white ring-4 ring-white/90',
-    labelColor: 'text-[#000000]',
-    valueColor: 'text-[#000000]',
-    helperBadge: 'bg-[#053332] text-white',
+    cardStyle: 'border border-cyan-100 bg-gradient-to-br from-cyan-50 to-white hover:border-cyan-200',
+    iconWrap: 'bg-cyan-100 text-cyan-700',
+    labelColor: 'text-cyan-800',
+    valueColor: 'text-slate-900',
+    helperBadge: 'bg-cyan-100 text-cyan-700',
   },
 };
 
@@ -99,24 +91,24 @@ export function StatCard({ label, value, icon: Icon, tone = 'navy', helper }: St
 
   return (
     <div
-      className={`rounded-xl p-5 shadow-[0_4px_14px_rgba(0,0,0,0.08)] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_8px_22px_rgba(0,0,0,0.14)] ${style.cardStyle}`}
+      className={`group relative overflow-hidden rounded-2xl p-4 sm:p-5 shadow-[0_2px_10px_rgba(15,23,42,0.045)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(15,23,42,0.08)] ${style.cardStyle}`}
     >
       <div className="flex items-start justify-between gap-3">
-        <p className={`text-xs font-extrabold leading-snug ${style.labelColor}`}>{label}</p>
+        <p className={`text-xs font-bold leading-snug ${style.labelColor}`}>{label}</p>
         <div
-          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg shadow-sm ${style.iconWrap}`}
+          className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${style.iconWrap}`}
         >
-          <Icon className="h-4 w-4" />
+          <Icon className="h-[18px] w-[18px]" />
         </div>
       </div>
 
-      <div className="mt-3 flex items-baseline justify-between gap-2">
-        <p className={`text-2xl font-black tracking-tight tabular-nums ${style.valueColor}`}>
+      <div className="mt-4 flex items-baseline justify-between gap-2">
+        <p className={`text-2xl font-extrabold tracking-tight tabular-nums ${style.valueColor}`}>
           {value}
         </p>
         {helper && (
           <span
-            className={`rounded-md px-2 py-0.5 font-mono text-[11px] font-bold tabular-nums shadow-xs ${style.helperBadge}`}
+            className={`rounded-full px-2.5 py-1 text-[10px] font-bold tabular-nums ${style.helperBadge}`}
           >
             {helper}
           </span>
