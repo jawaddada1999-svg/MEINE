@@ -56,10 +56,6 @@ export function OverviewView({
     const monthlyRevenue = paidPayments
       .filter((p) => (p.paymentDate || p.createdAt).startsWith(currentMonthPrefix))
       .reduce((sum, p) => sum + p.amount, 0);
-    const duePaymentsAmount = payments
-      .filter((p) => p.status === 'pending' || p.status === 'overdue')
-      .reduce((sum, p) => sum + p.amount, 0);
-
     const activeRate = totalAgencies > 0 ? Math.round((activeAgencies / totalAgencies) * 100) : 0;
 
     return {
@@ -71,7 +67,6 @@ export function OverviewView({
       pendingPaymentAgencies,
       totalRevenue,
       monthlyRevenue,
-      duePaymentsAmount,
       activeRate,
     };
   }, [agencies, payments]);
@@ -207,12 +202,6 @@ export function OverviewView({
       value: formatCurrency(stats.monthlyRevenue, settings.currency, lang),
       icon: TrendingUp,
       tone: 'success',
-    },
-    {
-      label: t.overview.duePayments,
-      value: formatCurrency(stats.duePaymentsAmount, settings.currency, lang),
-      icon: CreditCard,
-      tone: 'danger',
     },
   ];
 
