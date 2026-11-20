@@ -18,7 +18,8 @@ export type AgencyStatus =
   | 'pending_payment'
   | 'expired'
   | 'suspended'
-  | 'cancelled';
+  | 'cancelled'
+  | 'trial_rejected';
 
 export type PaymentStatus = 'paid' | 'pending' | 'overdue' | 'refunded';
 
