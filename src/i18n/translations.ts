@@ -604,6 +604,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       expired: 'اشتراك منتهٍ',
       suspended: 'موقوفة',
       cancelled: 'ملغاة',
+      trial_rejected: 'رفضت بعد التجربة',
     },
     paymentStatus: {
       paid: 'مدفوع',
@@ -1202,6 +1203,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       expired: 'Expiré',
       suspended: 'Suspendue',
       cancelled: 'Annulée',
+      trial_rejected: 'Refus après essai',
     },
     paymentStatus: {
       paid: 'Payé',
@@ -1793,6 +1795,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       expired: 'Expired',
       suspended: 'Suspended',
       cancelled: 'Cancelled',
+      trial_rejected: 'Rejected after trial',
     },
     paymentStatus: {
       paid: 'Paid',
