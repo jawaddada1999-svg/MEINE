@@ -2,109 +2,111 @@
 
 @layer base {
   :root {
-    --font-sans: 'Outfit', 'Cairo', system-ui, -apple-system, sans-serif;
+    --font-sans: 'Inter', 'IBM Plex Sans Arabic', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
-    --ibonda-primary: #053332;
-    --ibonda-primary-light: #0A4E4C;
-    --ibonda-teal: #0D7A72;
-    --ibonda-orange: #DF4416;
-    --ibonda-orange-hover: #BD320A;
-    --ibonda-bg: #FFFFFF;
+    --ibonda-primary: #172554;
+    --ibonda-primary-light: #1E40AF;
+    --ibonda-teal: #2563EB;
+    --ibonda-orange: #F97316;
+    --ibonda-orange-hover: #EA580C;
+    --ibonda-bg: #F6F8FC;
     --ibonda-card: #FFFFFF;
-    --ibonda-text: #000000;
-    --ibonda-muted: #111827;
-    --ibonda-border: #C6D1CF;
+    --ibonda-text: #172033;
+    --ibonda-muted: #64748B;
+    --ibonda-border: #E6EAF1;
   }
 
+  * { -webkit-tap-highlight-color: transparent; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', 'IBM Plex Sans Arabic', system-ui, sans-serif;
+    background: var(--ibonda-bg);
+    color: var(--ibonda-text);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
   html[lang="ar"] body {
-    font-family: 'Cairo', 'Outfit', system-ui, sans-serif;
-    background-color: var(--ibonda-bg);
-    color: var(--ibonda-text);
-    font-weight: 500;
+    font-family: 'IBM Plex Sans Arabic', 'Inter', system-ui, sans-serif;
+    letter-spacing: 0;
   }
-
-  html[lang="fr"] body,
-  html[lang="en"] body {
-    font-family: 'Outfit', 'Cairo', system-ui, sans-serif;
-    background-color: var(--ibonda-bg);
-    color: var(--ibonda-text);
-    font-weight: 500;
+  html[lang="fr"] body, html[lang="en"] body {
+    font-family: 'Inter', 'IBM Plex Sans Arabic', system-ui, sans-serif;
   }
-
-  .tabular-nums {
-    font-variant-numeric: tabular-nums;
-  }
-
-  .font-mono {
-    font-family: var(--font-mono);
-    font-variant-numeric: tabular-nums;
-  }
+  button, input, select, textarea { font: inherit; }
+  button { -webkit-tap-highlight-color: transparent; }
+  ::selection { background: rgba(37,99,235,.16); color: #172554; }
+  *:focus-visible { outline: 2px solid rgba(37,99,235,.55); outline-offset: 2px; }
+  .tabular-nums { font-variant-numeric: tabular-nums; }
+  .font-mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
 }
 
 @layer components {
   .ibonda-card {
-    @apply rounded-xl border-2 border-[#BAC7C5] bg-white shadow-[0_3px_12px_rgba(5,51,50,0.07)];
+    @apply rounded-2xl border border-[#E6EAF1] bg-white shadow-[0_2px_12px_rgba(15,23,42,0.04)];
   }
-
   .ibonda-card-header {
-    @apply border-b border-[#BAC7C5] bg-gradient-to-r from-[#E6ECEB] to-[#D4DFDD];
+    @apply border-b border-[#E6EAF1] bg-[#F8FAFC];
   }
-
   .ibonda-filter-bar {
-    @apply flex flex-wrap items-center gap-3 rounded-xl border border-[#BAC7C5] bg-[#EFF3F2] p-3.5;
+    @apply flex flex-wrap items-center gap-3 rounded-2xl border border-[#E6EAF1] bg-white p-4 shadow-[0_2px_10px_rgba(15,23,42,0.03)];
   }
-
   .ibonda-tabs-bar {
-    @apply flex flex-wrap items-center gap-1 rounded-xl border border-[#BAC7C5] bg-[#E6ECEB] p-1.5;
+    @apply flex flex-wrap items-center gap-1 rounded-xl border border-[#E6EAF1] bg-[#F1F5F9] p-1;
   }
-
   .ibonda-input {
-    @apply w-full rounded-lg border border-[#9FB0AD] bg-white px-3 py-2 text-xs font-semibold text-[#000000] placeholder:text-[#374151] transition-all hover:border-[#053332] focus:border-[#053332] focus:outline-none focus:ring-2 focus:ring-[#DF4416]/30;
+    @apply w-full rounded-xl border border-[#DCE3ED] bg-white px-3.5 py-2.5 text-sm font-medium text-[#172033] placeholder:text-[#94A3B8] transition-all duration-200 hover:border-[#A9B9D0] focus:border-[#2563EB] focus:outline-none focus:ring-4 focus:ring-[#2563EB]/10;
   }
-
   .ibonda-select {
-    @apply rounded-lg border border-[#9FB0AD] bg-white px-3 py-2 text-xs font-bold text-[#000000] transition-all hover:border-[#053332] focus:border-[#053332] focus:outline-none focus:ring-2 focus:ring-[#DF4416]/30;
+    @apply rounded-xl border border-[#DCE3ED] bg-white px-3.5 py-2.5 text-sm font-semibold text-[#172033] transition-all duration-200 hover:border-[#A9B9D0] focus:border-[#2563EB] focus:outline-none focus:ring-4 focus:ring-[#2563EB]/10;
   }
-
   .ibonda-table-wrap {
-    @apply overflow-hidden rounded-xl border-2 border-[#BAC7C5] bg-white shadow-[0_3px_12px_rgba(5,51,50,0.07)];
+    @apply overflow-hidden rounded-2xl border border-[#E6EAF1] bg-white shadow-[0_2px_12px_rgba(15,23,42,0.04)];
   }
-
   .ibonda-table-head {
-    @apply border-b border-[#0A4E4C] bg-[#053332] text-white;
+    @apply border-b border-[#E6EAF1] bg-[#F8FAFC] text-[#64748B];
   }
-
   .ibonda-table-row {
-    @apply transition-colors odd:bg-white even:bg-[#F7F9F8] hover:bg-[#EAF1EF] text-[#000000];
+    @apply border-b border-[#F1F4F8] text-[#334155] transition-colors duration-150 odd:bg-white even:bg-[#FBFCFE] hover:bg-[#F3F7FF];
   }
-
   .ibonda-btn-primary {
-    @apply inline-flex items-center gap-1.5 rounded-lg bg-[#DF4416] px-4 py-2 text-xs font-extrabold text-white shadow-sm transition-colors hover:bg-[#BD320A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DF4416]/50 whitespace-nowrap shrink-0;
+    @apply inline-flex items-center gap-2 rounded-xl bg-[#2563EB] px-4 py-2.5 text-sm font-bold text-white shadow-[0_3px_8px_rgba(37,99,235,0.18)] transition-all duration-200 hover:-translate-y-px hover:bg-[#1D4ED8] hover:shadow-[0_6px_14px_rgba(37,99,235,0.22)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#2563EB]/20 whitespace-nowrap shrink-0;
   }
-
   .ibonda-btn-teal {
-    @apply inline-flex items-center gap-1.5 rounded-lg bg-[#053332] px-4 py-2 text-xs font-extrabold text-white shadow-sm transition-colors hover:bg-[#0A4E4C] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#053332]/40 whitespace-nowrap shrink-0;
+    @apply inline-flex items-center gap-2 rounded-xl bg-[#172554] px-4 py-2.5 text-sm font-bold text-white shadow-sm transition-all duration-200 hover:-translate-y-px hover:bg-[#1E3A8A] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#172554]/15 whitespace-nowrap shrink-0;
   }
-
   .ibonda-btn-secondary {
-    @apply inline-flex items-center gap-1.5 rounded-lg border border-[#9FB0AD] bg-white px-3.5 py-2 text-xs font-bold text-[#000000] transition-colors hover:border-[#053332] hover:bg-[#EDF2F1] hover:text-[#000000] whitespace-nowrap shrink-0;
+    @apply inline-flex items-center gap-2 rounded-xl border border-[#E2E8F0] bg-white px-3.5 py-2.5 text-sm font-semibold text-[#475569] transition-all duration-200 hover:border-[#CBD5E1] hover:bg-[#F8FAFC] hover:text-[#172033] whitespace-nowrap shrink-0;
   }
 }
 
+/* Consistent premium surfaces and motion across all dashboard sections */
+#root { min-height: 100vh; }
+main { background: #F6F8FC !important; }
+main > div { animation: dashboard-enter .28s ease-out both; }
+@keyframes dashboard-enter {
+  from { opacity: 0; transform: translateY(7px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.ibonda-card, .ibonda-table-wrap {
+  border-radius: 16px !important;
+  border-width: 1px !important;
+  box-shadow: 0 2px 12px rgba(15,23,42,.045) !important;
+}
+input, select, textarea { transition: border-color .18s ease, box-shadow .18s ease, background-color .18s ease; }
+button { transition-property: color, background-color, border-color, box-shadow, transform, opacity; transition-duration: .18s; }
+table thead th { font-size: 11px; font-weight: 700; letter-spacing: .025em; }
+table tbody td { font-size: 13px; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 20px; }
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
 @media print {
-  .no-print {
-    display: none !important;
-  }
-  body {
-    background: #ffffff !important;
-    color: #090d0d !important;
-  }
-  .print-only-container {
-    box-shadow: none !important;
-    border: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
+  .no-print { display: none !important; }
+  body { background: #ffffff !important; color: #090d0d !important; }
+  .print-only-container { box-shadow: none !important; border: none !important; margin: 0 !important; padding: 0 !important; width: 100% !important; max-width: 100% !important; }
 }
