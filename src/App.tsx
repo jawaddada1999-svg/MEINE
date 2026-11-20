@@ -122,7 +122,6 @@ function DashboardShell() {
     };
     document.addEventListener('mousedown', handleOutside);
     window.addEventListener('keydown', handleKey);
-
     return () => {
       document.removeEventListener('mousedown', handleOutside);
       window.removeEventListener('keydown', handleKey);
@@ -526,7 +525,7 @@ function DashboardShell() {
       {/* Main Content Shell */}
       <div className="flex min-w-0 flex-1 flex-col bg-white">
         {/* Top Header */}
-        <header className="sticky top-0 z-30 flex min-h-16 flex-wrap items-center justify-between gap-2 border-b border-[#BAC7C5] bg-white px-3 py-2 sm:flex-nowrap sm:gap-3 sm:px-6 sm:py-0 no-print">
+        <header className="sticky top-0 z-30 flex h-16 items-center justify-between gap-3 border-b border-[#BAC7C5] bg-white px-4 sm:px-6 no-print">
           {/* Start: Menu Button + Breadcrumb */}
           <div className="flex items-center gap-3 min-w-0">
             <button
@@ -633,7 +632,7 @@ function DashboardShell() {
           </div>
 
           {/* End: Notifications Popover + Language Switcher + Profile Dropdown */}
-          <div className="flex max-w-full items-center gap-1.5 sm:gap-2.5 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
             {/* Notifications Bell Popover */}
             <div ref={notifRef} className="relative">
               <button
@@ -720,7 +719,7 @@ function DashboardShell() {
             </div>
 
             {/* Top Header Language Switcher */}
-            <div className="flex items-center gap-0.5 rounded-lg border border-[#BAC7C5] bg-[#EFF3F2] p-1 shrink-0">
+            <div className="flex items-center gap-0.5 rounded-lg border border-[#BAC7C5] bg-[#EFF3F2] p-1">
               <Globe className="mx-1 h-3.5 w-3.5 text-[#000000] hidden sm:block" />
               {(['ar', 'fr', 'en'] as Language[])
                 .filter((l) => settings.enabledLanguages.includes(l))
@@ -813,7 +812,7 @@ function DashboardShell() {
         </div>
 
         {/* Active View Viewport */}
-        <main className="min-w-0 flex-1 bg-white p-3 sm:p-6">
+        <main className="flex-1 bg-white p-4 sm:p-6">
           <div key={activeNav} className="mx-auto max-w-[1400px]">
             {renderView()}
           </div>
