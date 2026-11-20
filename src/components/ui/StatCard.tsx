@@ -11,14 +11,14 @@ interface StatCardProps {
 }
 
 const TONE_MAP: Record<StatTone, { iconWrap: string; accent: string; surface: string; value: string }> = {
-  navy: { iconWrap: 'bg-indigo-100 text-indigo-700', accent: '#6366F1', surface: '#F2F3FF', value: '#312E81' },
-  blue: { iconWrap: 'bg-blue-100 text-blue-700', accent: '#3B82F6', surface: '#EFF6FF', value: '#1E40AF' },
-  teal: { iconWrap: 'bg-teal-100 text-teal-700', accent: '#14B8A6', surface: '#F0FDFA', value: '#115E59' },
-  orange: { iconWrap: 'bg-orange-100 text-orange-700', accent: '#F97316', surface: '#FFF7ED', value: '#9A3412' },
-  success: { iconWrap: 'bg-emerald-100 text-emerald-700', accent: '#10B981', surface: '#ECFDF5', value: '#065F46' },
-  warning: { iconWrap: 'bg-amber-100 text-amber-700', accent: '#F59E0B', surface: '#FFFBEB', value: '#92400E' },
-  danger: { iconWrap: 'bg-rose-100 text-rose-700', accent: '#F43F5E', surface: '#FFF1F2', value: '#9F1239' },
-  info: { iconWrap: 'bg-sky-100 text-sky-700', accent: '#0EA5E9', surface: '#F0F9FF', value: '#075985' },
+  navy: { iconWrap: 'bg-[#E8ECF8] text-[#263B78]', accent: '#263B78', surface: '#F4F6FC', value: '#172554' },
+  blue: { iconWrap: 'bg-[#E8EDFF] text-[#4358B8]', accent: '#5269D8', surface: '#F3F5FF', value: '#263B78' },
+  teal: { iconWrap: 'bg-[#DDF3EF] text-[#0F766E]', accent: '#159A91', surface: '#F0FAF8', value: '#115E59' },
+  orange: { iconWrap: 'bg-[#F8E8C9] text-[#A66A16]', accent: '#D69A32', surface: '#FFFAF0', value: '#8A5A16' },
+  success: { iconWrap: 'bg-[#DDF3EF] text-[#0F766E]', accent: '#159A91', surface: '#F0FAF8', value: '#115E59' },
+  warning: { iconWrap: 'bg-[#F8E8C9] text-[#A66A16]', accent: '#D69A32', surface: '#FFFAF0', value: '#8A5A16' },
+  danger: { iconWrap: 'bg-[#FCE8EC] text-[#B83250]', accent: '#D45B73', surface: '#FFF5F6', value: '#9F2944' },
+  info: { iconWrap: 'bg-[#E8EDFF] text-[#4358B8]', accent: '#5269D8', surface: '#F3F5FF', value: '#263B78' },
 };
 
 export function StatCard({ label, value, icon: Icon, tone = 'navy', helper }: StatCardProps) {
