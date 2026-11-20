@@ -2,7 +2,7 @@
 
 @layer base {
   :root {
-    --font-sans: 'Outfit', 'Cairo', system-ui, -apple-system, sans-serif;
+    --font-sans: 'Outfit', 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
     --ibonda-primary: #053332;
     --ibonda-primary-light: #0A4E4C;
@@ -17,7 +17,7 @@
   }
 
   html[lang="ar"] body {
-    font-family: 'Cairo', 'Outfit', system-ui, sans-serif;
+    font-family: 'IBM Plex Sans Arabic', 'Outfit', system-ui, sans-serif;
     background-color: var(--ibonda-bg);
     color: var(--ibonda-text);
     font-weight: 500;
