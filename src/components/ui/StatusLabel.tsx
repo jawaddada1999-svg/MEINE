@@ -71,6 +71,8 @@ export function agencyStatusTone(status: string): { tone: SemanticTone; icon: St
       return { tone: 'slate', icon: 'pause' };
     case 'cancelled':
       return { tone: 'red', icon: 'x' };
+    case 'trial_rejected':
+      return { tone: 'amber', icon: 'x' };
     default:
       return { tone: 'slate', icon: 'clock' };
   }
