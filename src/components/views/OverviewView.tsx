@@ -262,50 +262,50 @@ export function OverviewView({
 
       {/* Charts Grid */}
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-        <div className="rounded-xl border-2 border-[#053332] bg-[#EDF7F2] overflow-hidden shadow-[0_3px_12px_rgba(0,0,0,0.08)]">
-          <div className="border-b border-[#053332]/25 bg-gradient-to-r from-[#B7DEC9] to-[#6AB894] flex items-center justify-between px-5 py-3">
-            <h2 className="text-sm font-black text-[#000000]">{t.overview.chartAgencyGrowth}</h2>
-            <span className="h-2.5 w-2.5 rounded-full bg-[#053332]" aria-hidden="true" />
+        <div className="overflow-hidden rounded-2xl border border-[#C7D2FE] bg-[#F8FAFF] shadow-sm">
+          <div className="flex items-center justify-between border-b border-[#C7D2FE] bg-[#EEF2FF] px-5 py-3">
+            <h2 className="text-sm font-bold text-[#312E81]">{t.overview.chartAgencyGrowth}</h2>
+            <span className="h-2.5 w-2.5 rounded-full bg-[#6366F1]" aria-hidden="true" />
           </div>
-          <div className="p-5 bg-white">
-            <SimpleBarChart data={agencyGrowthData} primaryColor="#053332" />
+          <div className="bg-white p-5">
+            <SimpleBarChart data={agencyGrowthData} primaryColor="#6366F1" />
           </div>
         </div>
 
-        <div className="rounded-xl border-2 border-[#15803D] bg-[#EAFDF1] overflow-hidden shadow-[0_3px_12px_rgba(0,0,0,0.08)]">
-          <div className="border-b border-[#15803D]/25 bg-gradient-to-r from-[#86EFAC] to-[#22C55E] flex items-center justify-between px-5 py-3">
-            <h2 className="text-sm font-black text-[#000000]">{t.overview.chartMonthlyRevenue}</h2>
-            <span className="h-2.5 w-2.5 rounded-full bg-[#0F5132]" aria-hidden="true" />
+        <div className="overflow-hidden rounded-2xl border border-[#A7F3D0] bg-[#F0FDF4] shadow-sm">
+          <div className="flex items-center justify-between border-b border-[#A7F3D0] bg-[#DCFCE7] px-5 py-3">
+            <h2 className="text-sm font-bold text-[#166534]">{t.overview.chartMonthlyRevenue}</h2>
+            <span className="h-2.5 w-2.5 rounded-full bg-[#16A34A]" aria-hidden="true" />
           </div>
-          <div className="p-5 bg-white">
+          <div className="bg-white p-5">
             <SmoothAreaChart
               data={monthlyRevenueData}
               valueFormatter={(v) => formatCurrency(v, settings.currency, lang)}
-              primaryColor="#15803D"
+              primaryColor="#16A34A"
             />
           </div>
         </div>
 
-        <div className="rounded-xl border-2 border-[#B8320D] bg-[#FFF4EB] overflow-hidden shadow-[0_3px_12px_rgba(0,0,0,0.08)]">
-          <div className="border-b border-[#B8320D]/25 bg-gradient-to-r from-[#FDBA74] to-[#F97316] flex items-center justify-between px-5 py-3">
-            <h2 className="text-sm font-black text-[#000000]">{t.overview.chartStatusDist}</h2>
-            <span className="h-2.5 w-2.5 rounded-full bg-[#9A2D0C]" aria-hidden="true" />
+        <div className="overflow-hidden rounded-2xl border border-[#DDD6FE] bg-[#FAF5FF] shadow-sm">
+          <div className="flex items-center justify-between border-b border-[#DDD6FE] bg-[#F3E8FF] px-5 py-3">
+            <h2 className="text-sm font-bold text-[#6B21A8]">{t.overview.chartStatusDist}</h2>
+            <span className="h-2.5 w-2.5 rounded-full bg-[#8B5CF6]" aria-hidden="true" />
           </div>
-          <div className="p-5 bg-white">
+          <div className="bg-white p-5">
             <HorizontalDistributionList items={statusDistribution} />
           </div>
         </div>
 
-        <div className="rounded-xl border-2 border-[#B45309] bg-[#FFFBEB] overflow-hidden shadow-[0_3px_12px_rgba(0,0,0,0.08)]">
-          <div className="border-b border-[#B45309]/25 bg-gradient-to-r from-[#FDE047] to-[#F59E0B] flex items-center justify-between px-5 py-3">
-            <h2 className="text-sm font-black text-[#000000]">{t.overview.chartTrialsVsPaid}</h2>
-            <span className="h-2.5 w-2.5 rounded-full bg-[#78350F]" aria-hidden="true" />
+        <div className="overflow-hidden rounded-2xl border border-[#FDE68A] bg-[#FFFBEB] shadow-sm">
+          <div className="flex items-center justify-between border-b border-[#FDE68A] bg-[#FEF3C7] px-5 py-3">
+            <h2 className="text-sm font-bold text-[#92400E]">{t.overview.chartTrialsVsPaid}</h2>
+            <span className="h-2.5 w-2.5 rounded-full bg-[#F59E0B]" aria-hidden="true" />
           </div>
-          <div className="p-5 bg-white">
+          <div className="bg-white p-5">
             <GroupedComparisonChart
               data={trialsVsPaidData}
-              primaryColor="#DF4416"
-              secondaryColor="#15803D"
+              primaryColor="#F59E0B"
+              secondaryColor="#6366F1"
               primaryLabel={t.overview.trialsLabel}
               secondaryLabel={t.overview.paidLabel}
             />
