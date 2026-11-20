@@ -47,6 +47,7 @@ export function OverviewView({
     const activeAgencies = agencies.filter((a) => a.status === 'active').length;
     const trialAgencies = agencies.filter((a) => a.status === 'free_trial').length;
     const expiredAgencies = agencies.filter((a) => a.status === 'expired').length;
+    const trialRejectedAgencies = agencies.filter((a) => a.status === 'trial_rejected').length;
     const pendingPaymentAgencies = agencies.filter((a) => a.status === 'pending_payment').length;
 
     const currentMonthPrefix = REFERENCE_TODAY.slice(0, 7);
@@ -66,6 +67,7 @@ export function OverviewView({
       activeAgencies,
       trialAgencies,
       expiredAgencies,
+      trialRejectedAgencies,
       pendingPaymentAgencies,
       totalRevenue,
       monthlyRevenue,
@@ -141,6 +143,11 @@ export function OverviewView({
         value: agencies.filter((a) => a.status === 'cancelled').length,
         color: '#991B1B',
       },
+      {
+        label: t.agencyStatus.trial_rejected,
+        value: agencies.filter((a) => a.status === 'trial_rejected').length,
+        color: '#B45309',
+      },
     ],
     [agencies, t]
   );
@@ -176,6 +183,12 @@ export function OverviewView({
       value: formatNumber(stats.expiredAgencies, lang),
       icon: AlertCircle,
       tone: 'danger',
+    },
+    {
+      label: t.agencyStatus.trial_rejected,
+      value: formatNumber(stats.trialRejectedAgencies, lang),
+      icon: AlertCircle,
+      tone: 'warning',
     },
     {
       label: t.overview.pendingPaymentAgencies,
