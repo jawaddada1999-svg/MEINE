@@ -34,18 +34,18 @@ export function TablePagination({
         <span className="font-black text-[#DF4416]">{totalItems}</span>
       </div>
 
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex items-center gap-1.5">
         <button
           type="button"
           disabled={safePage <= 1}
           onClick={() => onPageChange(safePage - 1)}
-          className="inline-flex min-h-10 items-center justify-center gap-1 rounded-lg border border-[#CBD5E1] bg-white px-3 py-2 text-xs font-bold text-[#172033] shadow-sm transition-colors hover:border-[#2563EB] hover:bg-[#EFF6FF] disabled:cursor-not-allowed disabled:opacity-45 whitespace-nowrap"
+          className="inline-flex items-center gap-1 rounded-lg border-2 border-[#BAC7C5] bg-white px-2.5 py-1.5 text-xs font-bold text-[#000000] shadow-xs transition-colors hover:border-[#053332] hover:bg-[#EAF1EF] disabled:cursor-not-allowed disabled:opacity-45 whitespace-nowrap"
         >
           {lang === 'ar' ? <ChevronRight className="h-3.5 w-3.5" /> : <ChevronLeft className="h-3.5 w-3.5" />}
           {t.common.previous}
         </button>
 
-        <span className="inline-flex min-h-10 items-center rounded-lg bg-[#172554] px-3 py-2 font-mono text-xs font-bold text-white tabular-nums shadow-sm">
+        <span className="rounded-md bg-[#053332] px-2.5 py-1 font-mono text-xs font-bold text-white tabular-nums shadow-xs">
           {safePage} / {totalPages}
         </span>
 
