@@ -23,13 +23,13 @@ import {
   XCircle,
 } from 'lucide-react';
 import { useIbonda } from '../../store/IbondaStore';
-import { Agency, AgencyStatus, LocalizedField } from '../../types/ibonda';
+import { Agency, AgencyStatus, LocalizedField, PaymentStatus } from '../../types/ibonda';
 import { addDaysToIso, formatCurrency, getLocalized } from '../../utils/formatters';
 import { REFERENCE_TODAY } from '../../data/seedData';
 import { Modal } from '../ui/Modal';
 import { ConfirmModal } from '../ui/ConfirmModal';
 import { ContactActionMenu } from '../ui/ContactActionMenu';
-import { agencyStatusTone, paymentStatusTone, StatusLabel } from '../ui/StatusLabel';
+import { agencyStatusTone, StatusLabel } from '../ui/StatusLabel';
 import { PageHeader } from '../ui/PageHeader';
 import { TablePagination } from '../ui/TablePagination';
 import { AgencyBrandingPanel } from './AgencyBrandingPanel';
@@ -128,6 +128,7 @@ export function AgenciesView({ openAddOnMount, onConsumeOpenAdd }: AgenciesViewP
     addAgency,
     updateAgency,
     updateAgencyStatus,
+    updatePaymentStatus,
     suspendAgency,
     activateAgency,
     cancelAgencySubscription,
@@ -831,7 +832,6 @@ export function AgenciesView({ openAddOnMount, onConsumeOpenAdd }: AgenciesViewP
                     <p className="p-5 text-xs text-[#374151]">{t.common.noResults}</p>
                   ) : (
                     agencyPayments.map((pay) => {
-                      const ps = paymentStatusTone(pay.status);
                       return (
                         <div key={pay.id} className="ibonda-table-row flex items-center justify-between px-5 py-3 text-xs">
                           <div>
@@ -844,7 +844,26 @@ export function AgenciesView({ openAddOnMount, onConsumeOpenAdd }: AgenciesViewP
                             <p className="font-extrabold text-[#000000] tabular-nums mb-1">
                               {formatCurrency(pay.amount, settings.currency, lang)}
                             </p>
-                            <StatusLabel tone={ps.tone} icon={ps.icon} label={t.paymentStatus[pay.status]} />
+                            <select
+                              value={pay.status}
+                              onChange={(e) => updatePaymentStatus(pay.id, e.target.value as PaymentStatus)}
+                              aria-label={t.payments.colStatus}
+                              className={`rounded-lg border px-2 py-1 text-[11px] font-bold outline-none cursor-pointer ${
+                                pay.status === 'paid'
+                                  ? 'border-[#15803D] bg-[#A9E8B8] text-black'
+                                  : pay.status === 'pending'
+                                    ? 'border-[#B88A08] bg-[#FFE27A] text-black'
+                                    : pay.status === 'overdue'
+                                      ? 'border-[#C53F4B] bg-[#FFB4B8] text-black'
+                                      : 'border-[#64748B] bg-[#CBD5E1] text-black'
+                              }`}
+                            >
+                              {(['paid', 'pending', 'overdue', 'refunded'] as PaymentStatus[]).map((status) => (
+                                <option key={status} value={status} className="bg-white text-black">
+                                  {t.paymentStatus[status]}
+                                </option>
+                              ))}
+                            </select>
                           </div>
                         </div>
                       );
