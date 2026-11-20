@@ -1538,7 +1538,7 @@ export function AgenciesView({ openAddOnMount, onConsumeOpenAdd }: AgenciesViewP
           aria-label={t.agencies.filterStatus}
         >
           <option value="all">{t.agencies.filterStatus}: {t.common.all}</option>
-          {(['free_trial', 'active', 'pending_payment', 'expired', 'suspended', 'cancelled'] as AgencyStatus[]).map(
+          {(['free_trial', 'active', 'pending_payment', 'expired', 'suspended', 'cancelled', 'trial_rejected'] as AgencyStatus[]).map(
             (st) => (
               <option key={st} value={st}>
                 {t.agencyStatus[st]}
