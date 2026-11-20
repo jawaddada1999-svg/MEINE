@@ -178,22 +178,22 @@ export function PlansView({ openAddOnMount, onConsumeOpenAdd }: PlansViewProps) 
 
   const planThemes = [
     {
-      card: 'border-2 border-[#15803D] bg-gradient-to-br from-[#86EFAC] via-[#4ADE80] to-[#22C55E]',
-      priceBox: 'bg-white/95 border-[#15803D]/40',
-      pill: 'bg-[#0F5132] text-white',
-      checkBg: 'bg-[#0F5132] text-white',
+      card: 'border border-[#C7D2FE] bg-gradient-to-br from-[#F8FAFF] via-white to-white',
+      priceBox: 'bg-white border-[#C7D2FE]',
+      pill: 'bg-[#EEF2FF] text-[#4338CA]',
+      checkBg: 'bg-[#6366F1] text-white',
     },
     {
-      card: 'border-2 border-[#B8320D] bg-gradient-to-br from-[#FDBA74] via-[#FB923C] to-[#F97316]',
-      priceBox: 'bg-white/95 border-[#B8320D]/40',
-      pill: 'bg-[#9A2D0C] text-white',
-      checkBg: 'bg-[#9A2D0C] text-white',
+      card: 'border border-[#DDD6FE] bg-gradient-to-br from-[#F5F3FF] via-white to-white',
+      priceBox: 'bg-white border-[#DDD6FE]',
+      pill: 'bg-[#F3E8FF] text-[#7E22CE]',
+      checkBg: 'bg-[#8B5CF6] text-white',
     },
     {
-      card: 'border-2 border-[#053332] bg-gradient-to-br from-[#B7DEC9] via-[#8AC9AA] to-[#5FB38C]',
-      priceBox: 'bg-white/95 border-[#053332]/40',
-      pill: 'bg-[#053332] text-white',
-      checkBg: 'bg-[#053332] text-[#FF6B42]',
+      card: 'border border-[#99F6E4] bg-gradient-to-br from-[#F0FDFA] via-white to-white',
+      priceBox: 'bg-white border-[#99F6E4]',
+      pill: 'bg-[#CCFBF1] text-[#0F766E]',
+      checkBg: 'bg-[#14B8A6] text-white',
     },
   ];
 
